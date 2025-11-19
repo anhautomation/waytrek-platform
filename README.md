@@ -1,5 +1,34 @@
-# Vue 3 + Vite
+# Waytrek – Travel Experience Engine (Frontend)
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+🔗 Live demo: https://waytrek-platform.vercel.app  
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+Waytrek is a **travel experience engine**.  
+Instead of focusing only on hotels or flights, Waytrek helps travelers discover:
+
+- unique places
+- meaningful experiences
+- curated routes and journeys
+
+This repository contains the **public frontend** of Waytrek.  
+Backend services, data models and analytics pipelines are kept **private by design**.
+
+## 🛠 Tech stack
+
+- Vue 3
+- Vite
+- Tailwind CSS
+- Naive UI
+
+## ✨ Current scope (Week 1)
+
+- Landing page with brand hero section
+- Navigation header (News / Explore / Guides / Food / Stay)
+- Base layout ready for future sections (guides, highlights, etc.)
+
+## ⚙️ Development
+
+```bash
+git clone https://github.com/anhautomation/waytrek-web.git
+cd waytrek-web
+npm install
+npm run dev
