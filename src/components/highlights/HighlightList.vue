@@ -1,10 +1,10 @@
 <template>
-  <section class="max-w-6xl mx-auto px-4 mt-12">
+  <section class="max-w-6xl mx-auto px-4 mt-16 mb-16">
     <p class="text-emerald-600 text-sm font-semibold mb-1">
-      {{ newsText.sectionLabel }}
+      {{ text.sectionLabel }}
     </p>
     <h2 class="text-2xl font-semibold mb-6">
-      {{ newsText.sectionTitle }}
+      {{ text.sectionTitle }}
     </h2>
 
     <div class="space-y-8">
@@ -13,10 +13,7 @@
         :key="item.id"
         class="flex gap-6"
       >
-        <img
-          :src="item.image"
-          class="w-[210px] h-[140px] object-cover rounded-md flex-shrink-0"
-        />
+        <img :src="item.image" class="w-[210px] h-[140px] object-cover rounded-md flex-shrink-0"/>
         <div class="flex flex-col justify-between">
           <div>
             <h3 class="text-lg font-semibold mb-2">
@@ -35,20 +32,23 @@
 
     <div class="text-center mt-6">
       <button class="text-emerald-600 text-sm font-medium">
-        {{ newsText.viewAll }}
+        {{ text.viewAll }}
       </button>
     </div>
   </section>
 </template>
 
 <script>
-export default {
-  props: {
-    items: Array,
-    newsText: {
-      type: Object,
-      required: true,
+  export default {
+    props: {
+      items: {
+        type: Array,
+        required: true,
+      },
+      text: {
+        type: Object,
+        required: true,
+      },
     },
-  },
-}
+  }
 </script>
