@@ -108,7 +108,6 @@ We build until capital accelerates global scale.
 
 ## 📩 Contact
 If you are aligned with the mission — let's talk.  
-Founder: **Nguyễn Bảo Anh**  
 🔗 LinkedIn: https://www.linkedin.com/in/anh-nguyen-4b400485/  
 ---
 
