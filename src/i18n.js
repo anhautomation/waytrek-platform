@@ -1,4 +1,3 @@
-// src/i18n.js
 export const messages = {
   vi: {
     langLabel: 'VI',
@@ -23,8 +22,9 @@ export const messages = {
       viewAll: 'Xem tất cả ▼',
     },
     guide: {
-      sectionLabel: 'CHỌN KẾ HOẠCH HOÀN HẢO',
-      sectionTitle: 'CẨM NANG DU LỊCH',
+        sectionLabel: 'CHỌN KẾ HOẠCH HOÀN HẢO',
+        sectionTitle: 'CẨM NANG DU LỊCH',
+        viewAll: 'Xem tất cả ▼',
     },
     highlight: {
       sectionLabel: 'KHÔNG THỂ BỎ QUA',
@@ -56,8 +56,9 @@ export const messages = {
       viewAll: 'View all ▼',
     },
     guide: {
-      sectionLabel: 'PLAN YOUR PERFECT TRIP',
-      sectionTitle: 'TRAVEL GUIDES',
+        sectionLabel: 'PLAN YOUR PERFECT TRIP',
+        sectionTitle: 'TRAVEL GUIDES',
+        viewAll: 'View all ▼',
     },
     highlight: {
       sectionLabel: 'NOT TO BE MISSED',
