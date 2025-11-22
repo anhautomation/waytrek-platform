@@ -1,5 +1,5 @@
- <template>
-  <section class="max-w-[1240px] w-full mx-auto px-4 mt-20">
+<template>
+  <section class="max-w-6xl mx-auto px-4 mt-20">
     <p class="text-emerald-600 text-sm font-semibold mb-1">
       {{ text.sectionLabel }}
     </p>
@@ -7,17 +7,18 @@
       {{ text.sectionTitle }}
     </h2>
 
-    <div class="relative">
+    <div class="relative w-full">
       <button
-        class="hidden md:flex absolute left-0 top-[160px] -translate-x-1/2 h-11 w-11 rounded-full border bg-white shadow
-               items-center justify-center text-xl hover:bg-gray-100 disabled:opacity-40"
+        class="hidden md:flex absolute left-0 top-[98px] -translate-x-1/2
+               h-11 w-11 rounded-full border bg-white shadow
+               items-center justify-center text-xl hover:bg-gray-100 disabled:opacity-40 z-20"
         @click="prevSlide"
         :disabled="currentSlide === 0"
       >
         ‹
       </button>
 
-      <div class="overflow-hidden">
+      <div class="overflow-hidden w-full">
         <div
           class="flex transition-transform duration-500 ease-out"
           :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
@@ -27,11 +28,11 @@
             :key="slideIndex"
             class="w-full flex-shrink-0"
           >
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
               <article
                 v-for="guide in slide"
                 :key="guide.id"
-                class="flex flex-col min-w-0"
+                class="flex flex-col"
               >
                 <div class="w-full h-[240px] rounded-2xl overflow-hidden">
                   <img
@@ -41,7 +42,7 @@
                   />
                 </div>
 
-                <div class="px-1 pt-4 pb-6 flex flex-col flex-1">
+                <div class="pt-4 flex flex-col flex-1">
                   <h3 class="text-[20px] font-semibold leading-tight">
                     {{ guide.title }}
                   </h3>
@@ -56,8 +57,9 @@
       </div>
 
       <button
-        class="hidden md:flex absolute right-0 top-[160px] translate-x-1/2 h-11 w-11 rounded-full border bg-white shadow
-               items-center justify-center text-xl hover:bg-gray-100 disabled:opacity-40"
+        class="hidden md:flex absolute right-0 top-[98px] translate-x-1/2
+               h-11 w-11 rounded-full border bg-white shadow
+               items-center justify-center text-xl hover:bg-gray-100 disabled:opacity-40 z-20"
         @click="nextSlide"
         :disabled="currentSlide === maxSlide"
       >
@@ -78,14 +80,8 @@
 <script>
 export default {
   props: {
-    items: {
-      type: Array,
-      required: true,
-    },
-    text: {
-      type: Object,
-      required: true,
-    },
+    items: { type: Array, required: true },
+    text: { type: Object, required: true },
   },
   data() {
     return {
@@ -95,11 +91,11 @@ export default {
   },
   computed: {
     slides() {
-      const chunks = []
+      const groups = []
       for (let i = 0; i < this.items.length; i += this.perPage) {
-        chunks.push(this.items.slice(i, i + this.perPage))
+        groups.push(this.items.slice(i, i + this.perPage))
       }
-      return chunks
+      return groups
     },
     maxSlide() {
       return this.slides.length - 1
@@ -107,14 +103,10 @@ export default {
   },
   methods: {
     nextSlide() {
-      if (this.currentSlide < this.maxSlide) {
-        this.currentSlide++
-      }
+      if (this.currentSlide < this.maxSlide) this.currentSlide++
     },
     prevSlide() {
-      if (this.currentSlide > 0) {
-        this.currentSlide--
-      }
+      if (this.currentSlide > 0) this.currentSlide--
     },
   },
 }

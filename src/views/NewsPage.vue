@@ -27,7 +27,10 @@
       </div>
     </section>
 
-    <NewsList :items="latestNews" :news-text="messages.news" />
+    <NewsList 
+      :items="latestNews" 
+      :news-text="messages.news" 
+    />
 
     <GuideList
       :items="travelGuides"
